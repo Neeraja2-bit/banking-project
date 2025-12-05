@@ -56,6 +56,7 @@ public class AccountService {
                 .orElseThrow(() -> new AccountNotFoundException("Account not found with id: " + id));
         account.setBalance(balance);
         return accountRepository.save(account);
+
     }
     public boolean closeAccount(Long id) {
         Optional<Account> optional = accountRepository.findById(id);
